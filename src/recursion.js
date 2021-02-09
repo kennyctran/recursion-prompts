@@ -56,8 +56,7 @@ var sumBelow = function (n) {
   }
   if (Math.sign(n) < 0) {
     return (n + 1) + sumBelow(n + 1);
-  }
-  if (Math.sign(n) > 0) {
+  } else {
     return (n - 1) + sumBelow(n - 1);
   }
 };
