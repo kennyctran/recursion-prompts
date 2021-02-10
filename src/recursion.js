@@ -68,18 +68,10 @@ var range = function (x, y) {
     return [];
   }
   if (x < y) {
-    return range(x + 1, y)
-      .concat(x + 1)
-      .sort(function (a, b) {
-        return a - b;
-      });
+    return range(x, y - 1).concat(y - 1);
   }
   if (x > y) {
-    return range(x - 1, y)
-      .concat(x - 1)
-      .sort(function (a, b) {
-        return b - a;
-      });
+    return range(x, y + 1).concat(y + 1);
   }
 };
 
