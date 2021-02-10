@@ -112,12 +112,31 @@ var powerOfTwo = function (n) {
 
 // 9. Write a function that reverses a string.
 var reverse = function (string) {
+  var index = string.length - 1;
+  if (string === '') {
+    return '';
+  }
+  if (string !== '') {
+    return string[index] + reverse(string.substring(0, index));
+  }
 };
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function (string) {
+  var clean = string.replace(/\s/g, '').toLowerCase();
+  var last = clean.length - 1;
+  if (clean.length === 1) {
+    return true;
+  }
+  if (clean.length === 0) {
+    return true;
+  }
+  if (clean[0] === clean[last]) {
+    return palindrome(clean.slice(1, last));
+  } else {
+    return false;
+  }
 };
-
 // 11. Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
 // modulo(5,2) // 1
